@@ -11,9 +11,9 @@ The algorithm is particularly suited for sorting lists with the following proper
 
 For example:
 
-$[2,2,1,0,1,0,1,3] \rightarrow [0,0,1,1,1,2,2,3]$
+`[2,2,1,0,1,0,1,3] -> [0,0,1,1,1,2,2,3]``
 
-In addition to the input list of length $n$, the algorithm also takes as input the maximum value in the list ($k$). E.g., $k=3$ in the above example.
+In addition to the input list of length *n*, the algorithm also takes as input the maximum value in the list (*k*). E.g., *k=3* in the above example.
 
 The algorithm proceeds by first counting how often each value appears. Based on these counts, the algorithm figures out the range of output locations to place each value. For example, because there are two 0s and three 1s, we know that the first 1 goes in the 3rd position, and the final 1 goes in the 5th position. We'll complete the algorithm `supersort` by implementing three functions, `count_values`, `get_positions`, and `construct_output`.
 
