@@ -11,7 +11,7 @@ The algorithm is particularly suited for sorting lists with the following proper
 
 For example:
 
-`[2,2,1,0,1,0,1,3] -> [0,0,1,1,1,2,2,3]``
+`[2,2,1,0,1,0,1,3] -> [0,0,1,1,1,2,2,3]`
 
 In addition to the input list of length *n*, the algorithm also takes as input the maximum value in the list (*k*). E.g., *k=3* in the above example.
 
