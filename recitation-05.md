@@ -15,7 +15,7 @@ For example:
 
 In addition to the input list of length *n*, the algorithm also takes as input the maximum value in the list (*k*). E.g., *k=3* in the above example.
 
-The algorithm proceeds by first counting how often each inpnut value appears. Based on these counts, the algorithm figures out the range of output locations to place each value. For example, because there are two 0s and three 1s, we know that the first 1 goes in the 3rd position, and the final 1 goes in the 5th position. Finally, it uses this information to construct the final sorted list. In more detail, the three steps are:
+The algorithm proceeds by first counting how often each input value appears. Based on these counts, the algorithm figures out the range of output locations to place each value. For example, because there are two 0s and three 1s, we know that the first 1 goes in the 3rd position, and the final 1 goes in the 5th position. Finally, it uses this information to construct the final sorted list. In more detail, the three steps are:
 
 - **Step 1:** the `count_values` function counts how often each value appears. 
   * `count_values([2,2,1,0,1,0,1,3], 3) -> [2,3,2,1]`
