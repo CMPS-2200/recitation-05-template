@@ -15,7 +15,45 @@ For example:
 
 In addition to the input list of length *n*, the algorithm also takes as input the maximum value in the list (*k*). E.g., *k=3* in the above example.
 
-The algorithm proceeds by first counting how often each value appears. Based on these counts, the algorithm figures out the range of output locations to place each value. For example, because there are two 0s and three 1s, we know that the first 1 goes in the 3rd position, and the final 1 goes in the 5th position. We'll complete the algorithm `supersort` by implementing three functions, `count_values`, `get_positions`, and `construct_output`.
+The algorithm proceeds by first counting how often each inpnut value appears. Based on these counts, the algorithm figures out the range of output locations to place each value. For example, because there are two 0s and three 1s, we know that the first 1 goes in the 3rd position, and the final 1 goes in the 5th position. Finally, it uses this information to construct the final sorted list. In more detail, the three steps are:
+
+- **Step 1:** the `count_values` function counts how often each value appears. 
+  * `count_values([2,2,1,0,1,0,1,3], 3) -> [2,3,2,1]`
+- **Step 2:** the `get_positions` function determines where the first appearance of each value should be in the final, sorted output.
+  * `get_positions([2,3,2,1]) -> [0, 2, 5, 7]`  In this example, the first 0 should appear at index 0, the first 2 at index 2, the first 2 at index 5, and the first 3 at index 7.
+- **Step 3:** the `construct_output` function combines the original input with the positions from step 2 to construct the final output. It does so by looping through the original input, finding the proper location for each value, and updating the counts array as values are added.
+  * `construct_output([2,2,1,0,1,0,1,3], [0, 2, 5, 7]) -> [0,0,1,1,1,2,2,3]`
+
+Here is a partial trace of step 3:
+
+`a=[2,2,1,0,1,0,1,3]`  
+`counts=[0, 2, 5, 7]`  
+`output=[-,-,-,-,-,-,-,-]`
+
+- insert 2
+
+`counts=[0, 2, `**6**`, 7]`  
+`output=[-,-,-,-,-,2,-,-]`
+
+- insert 2
+
+`counts=[0, 2, `**7**`, 7]`  
+`output=[-,-,-,-,-,2,2,-]`
+
+- insert 1
+
+`counts=[0, `**3**`, 7, 7]`  
+`output=[-,-,1,-,-,2,2,-]`
+
+- insert 0
+
+`counts=[`**1**`, 3, 7, 7]`  
+`output=[0,-,1,-,-,2,2,-]`
+
+...
+
+
+Below, we'll complete the algorithm `supersort` by implementing three functions, `count_values`, `get_positions`, and `construct_output`.
 
 
 
