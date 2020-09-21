@@ -27,28 +27,28 @@ The algorithm proceeds by first counting how often each input value appears. Bas
 Here is a partial trace of step 3:
 
 `a=[2,2,1,0,1,0,1,3]`  
-`counts=[0, 2, 5, 7]`  
 `output=[-,-,-,-,-,-,-,-]`
+`counts=[0, 2, 5, 7]`  
 
 - insert 2
 
-`counts=[0, 2, `**6**`, 7]`  
 `output=[-,-,-,-,-,2,-,-]`
+`counts=[0, 2, `**6**`, 7]`  
 
 - insert 2
 
-`counts=[0, 2, `**7**`, 7]`  
 `output=[-,-,-,-,-,2,2,-]`
+`counts=[0, 2, `**7**`, 7]`  
 
 - insert 1
 
-`counts=[0, `**3**`, 7, 7]`  
 `output=[-,-,1,-,-,2,2,-]`
+`counts=[0, `**3**`, 7, 7]`  
 
 - insert 0
 
-`counts=[`**1**`, 3, 7, 7]`  
 `output=[0,-,1,-,-,2,2,-]`
+`counts=[`**1**`, 3, 7, 7]`  
 
 ...
 
