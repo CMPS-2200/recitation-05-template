@@ -102,8 +102,9 @@ def count_reduce(group):
 
 def run_map_reduce(map_f, reduce_f, mylist):
     # done.
+    # explanation:
     # apply map_f to every element of mylist, returning a list of
-    # tuples (value, map_f(value))
+    # tuples [(value_0, map_f(value_0)), (value_1, map_f(value_1)), ...]
     pairs = flatten(list(map(map_f, mylist)))
     # collect tuples with the same value into single tuples
     # (value, [list of mapped values])
