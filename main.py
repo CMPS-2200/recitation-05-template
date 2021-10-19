@@ -100,7 +100,7 @@ def count_reduce(group):
 
 def run_map_reduce(map_f, reduce_f, mylist):
     # done. 
-    pairs = flatten(list(map(map_f, mylist)))
+    pairs = list(map(map_f, mylist))
     groups = collect(pairs)
     return [reduce_f(g) for g in groups]
 
@@ -117,7 +117,8 @@ def plus(x,y):
 
 
 def scan(f, id_, a):
-    # done. 
+    # done. inefficient but in analysis assume efficient
+    # implementation from lecture
     return (
             [reduce(f, id_, a[:i+1]) for i in range(len(a))],
              reduce(f, id_, a)

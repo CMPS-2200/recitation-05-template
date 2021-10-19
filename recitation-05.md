@@ -20,7 +20,7 @@ The algorithm proceeds by first counting how often each input value appears. Bas
 - **Step 1:** the `count_values` function counts how often each value appears. 
   * `count_values([2,2,1,0,1,0,1,3], 3) -> [2,3,2,1]`
 - **Step 2:** the `get_positions` function determines where the first appearance of each value should be in the final, sorted output.
-  * `get_positions([2,3,2,1]) -> [0, 2, 5, 7]`  In this example, the first 0 should appear at index 0, the first 2 at index 2, the first 2 at index 5, and the first 3 at index 7.
+  * `get_positions([2,3,2,1]) -> [0, 2, 5, 7]`  In this example, the first 0 should appear at index 0, the first 1 at index 2, the first 2 at index 5, and the first 3 at index 7.
 - **Step 3:** the `construct_output` function combines the original input with the positions from step 2 to construct the final output. It does so by looping through the original input, finding the proper location for each value, and updating the counts array as values are added.
   * `construct_output([2,2,1,0,1,0,1,3], [0, 2, 5, 7]) -> [0,0,1,1,1,2,2,3]`
 
