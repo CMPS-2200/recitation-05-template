@@ -88,6 +88,8 @@ def test_count_values_mr():
     assert count_values_mr([2,2,1,0,1,0,1,3], 3) == [2, 3, 2, 1]
 
 def count_map(value):
+    # hint: this function should return a list, even if that list
+    # contains a single tuple
     ###TODO
     pass
 
@@ -99,9 +101,15 @@ def count_reduce(group):
 # the below functions are provided for use above.
 
 def run_map_reduce(map_f, reduce_f, mylist):
-    # done. 
-    pairs = list(map(map_f, mylist))
+    # done.
+    # apply map_f to every element of mylist, returning a list of
+    # tuples (value, map_f(value))
+    pairs = flatten(list(map(map_f, mylist)))
+    # collect tuples with the same value into single tuples
+    # (value, [list of mapped values])
+    # e.g, [(2,1), (2,1)] becomes [(2,[1,1])]
     groups = collect(pairs)
+    # reduce each tuple, e.g., [(2,[1,1])] becomes [(2,2)]
     return [reduce_f(g) for g in groups]
 
 def collect(pairs):
