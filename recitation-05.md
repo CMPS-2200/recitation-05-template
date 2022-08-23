@@ -1,5 +1,8 @@
 # CMPS 2200  Recitation 05
 
+**Name (Team Member 1):**_________________________  
+**Name (Team Member 2):**_________________________
+
 In this lab, we'll continue working with sequence functions and sorting.
 
 The sorting algorithms we've discussed so far all work by *comparing* numbers (e.g., `merge_sort`, `insertion_sort`, `selection_sort`). Today, we'll look at an algorithm that sorts without making any pairwise comparisons.
